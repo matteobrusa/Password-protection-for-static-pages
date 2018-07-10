@@ -27,3 +27,7 @@ Pretty much secure, please consider that:
 0. If your hosting service offers directory listing, a visitor can bypass the protection.
 1. there's no protection against brute force attack. Pick a very long and hard to guess password. 
 
+## Troubleshooting
+
+0. Test the [demo page](http://matteobrusa.github.io/Password-protection-for-static-pages/) in your browser with password 'secret'
+0. Deploy the whole repo on your hosting, and test again.
