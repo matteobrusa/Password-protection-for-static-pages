@@ -94,11 +94,11 @@ div.vertical {
 		
 		var hash= pwd;
 		hash= Sha1.hash(pwd);
-		var url= hash + "/index.html";
+		var url= hash + "";
 			
 		$.ajax({
 			url : url,
-			dataType : "html",
+			dataType : "",
 			success : function(data) {
 
 				window.location= url;
