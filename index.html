@@ -84,7 +84,7 @@ div.vertical {
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	 
 
-	 <script type="text/javascript" src="https://cdn.rawgit.com/chrisveness/crypto/master/sha1.js"></script>
+	 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jssha@2.3.1/src/sha1.js"></script>
 
 	<script type="text/javascript">
 	"use strict";
@@ -92,8 +92,10 @@ div.vertical {
 
 	function loadPage(pwd) {
 		
+		var pwd_sha1 = new jsSHA("SHA-1", "TEXT");
 		var hash= pwd;
-		hash= Sha1.hash(pwd);
+		pwd_sha1.update(pwd);
+		hash= pwd_sha1.getHash("HEX");
 		var url= hash + "/index.html";
 			
 		$.ajax({
