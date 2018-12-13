@@ -11,7 +11,7 @@
 <style>
 
 body {
-	
+
 	background-image: url('grunge_patterns.jpg');
 	background-attachment: fixed;
 	color: #333;
@@ -32,7 +32,7 @@ body {
 	background: rgba(10, 10, 10, 0.8);
 	text-align: center;
 	margin: auto;
-	
+
 }
 
 div.horizontal {
@@ -53,12 +53,12 @@ div.vertical {
    text-align: center;
 }
 
-::-moz-placeholder {  
+::-moz-placeholder {
    color: #955;
    text-align: center;
 }
 
-:-ms-input-placeholder {  
+:-ms-input-placeholder {
    color: #955;
    text-align: center;
 }
@@ -66,11 +66,11 @@ div.vertical {
 </style>
 
 <body>
-	
+
 	<div id="loginbox" class="lightbox" >
 		<div class="horizontal">
 			<div class="vertical">
-				<div class="box">				
+				<div class="box">
 					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
 					<button id="loginbutton" type="button">Enter</button>
 					<p id="wrongPassword" style="display: none">wrong password</p>
@@ -82,20 +82,20 @@ div.vertical {
 
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-	 
 
-	 <script type="text/javascript" src="https://cdn.rawgit.com/chrisveness/crypto/master/sha1.js"></script>
+
+	 <script type="text/javascript" src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
 
 	<script type="text/javascript">
 	"use strict";
 
 
 	function loadPage(pwd) {
-		
+
 		var hash= pwd;
 		hash= Sha1.hash(pwd);
 		var url= hash + "/index.html";
-			
+
 		$.ajax({
 			url : url,
 			dataType : "html",
@@ -105,7 +105,7 @@ div.vertical {
 
 			},
 			error : function(xhr, ajaxOptions, thrownError) {
-			
+
 
 				parent.location.hash= hash;
 
@@ -116,18 +116,18 @@ div.vertical {
 		});
 	}
 
-	 
+
 	$("#loginbutton").on("click", function() {
 		loadPage($("#password").val());
 	});
 	$("#password").keypress(function(e) {
 		if (e.which == 13) {
-			
+
 			loadPage($("#password").val());
 		}
 	});
 	$("#password").focus();
-		
+
 	</script>
 
 </body>
