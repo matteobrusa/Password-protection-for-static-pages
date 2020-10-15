@@ -1,3 +1,10 @@
+### Updates
+
+The original version of this is on [github](https://github.com/matteobrusa/Password-protection-for-static-pages)
+
+I cleaned up the code removing jQuery and updating the crypto lib to use SHA256.
+I also added a robots.txt file.
+
 # Password protection for static pages
 
 This simple HTML document helps you protecting static pages or whole websites with no server configuration required: you can now use Dropbox, Amazon S3 or any generic hosting service to host a private, password protected site.
@@ -17,7 +24,7 @@ The final structure will be:
 ```
 - index.html
 - background.jpg
-- this-is-a-hash      <-- the SHA1 hash of your password               
+- this-is-a-hash      <-- the SHA256 hash of your password               
   \ - index.html      <-- your original index document
 ```
 
